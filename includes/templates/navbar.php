@@ -2,7 +2,7 @@
 
 <section class="flex">
 
-   <a href="home.php" class="logo">AbdelMo'ez Ismael Academy</a>
+   <a href="index.php" class="logo">AbdelMo'ez Ismael Academy</a>
 
    <div class="icons">
       <div id="menu-btn" class="fas fa-bars" alt="Menu"></div>
@@ -26,7 +26,7 @@
    </div>
 
    <nav class="navbar">
-      <a href="home.php"><i class="fas fa-home" alt="Home"></i><span>Home</span></a>
+      <a href="index.php"><i class="fas fa-home" alt="Home"></i><span>Home</span></a>
       <a href="teachers.php"><i class="fas fa-chalkboard-user" alt="Lectures"></i><span>Lectures</span></a>
       <a href="about.php"><i class="fas fa-question" alt="Ask a question"></i><span>Ask a question?</span></a>
       <a href="location.php"><i class="fas fa-map-marker-alt" alt="Center Location"></i><span>Center Location</span></a>
