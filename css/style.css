@@ -422,6 +422,7 @@ section {
    color: var(--white);
    margin-top: 2rem;
    margin-bottom: 0;
+   border-color: var(--white);
 }
 
 .location .box-container {
