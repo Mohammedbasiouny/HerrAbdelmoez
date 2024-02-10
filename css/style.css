@@ -408,6 +408,56 @@ section {
    color: var(--main-color);
 }
 
+/* Lecture */
+.lecture {
+   direction: rtl;
+}
+
+.lecture .select-tutor {
+   margin-bottom: 2rem;
+   border-radius: 0.5rem;
+   background-color: var(--white);
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+}
+
+.lecture .select-tutor select {
+   width: 100%;
+   background: none;
+   font-size: 1.8rem;
+   color: var(--black);
+   border: var(--border);
+   padding: 1.5rem 2rem;
+   border-radius: 4px;
+}
+
+.lecture .select-tutor option {
+   font-size: 2rem;
+   cursor: pointer;
+   background: var(--white);
+}
+
+.lecture .centers-container {
+   display: grid;
+   gap: 2rem;
+}
+
+.lecture .centers-container .center-link {
+   text-align: center;
+   font-size: 1.4rem;
+   font-weight: 700;
+   padding: 1.5rem 2rem;
+   color: #FFFFFF;
+   border-radius: 4px;
+   background-color: #d60c3e;
+   transition: background-color 0.3s ease;
+}
+
+.lecture .centers-container .center-link:hover {
+   background-color: #ee9507;
+}
+
 /* Location */
 .location {
    background-image: url(../images/locations.jpg);
