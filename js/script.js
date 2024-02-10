@@ -2,34 +2,34 @@ let toggleBtn = document.getElementById('toggle-btn');
 let body = document.body;
 let darkMode = localStorage.getItem('dark-mode');
 
-const enableDarkMode = () =>{
+const enableDarkMode = () => {
    toggleBtn.classList.replace('fa-sun', 'fa-moon');
    body.classList.add('dark');
    localStorage.setItem('dark-mode', 'enabled');
 }
 
-const disableDarkMode = () =>{
+const disableDarkMode = () => {
    toggleBtn.classList.replace('fa-moon', 'fa-sun');
    body.classList.remove('dark');
    localStorage.setItem('dark-mode', 'disabled');
 }
 
-if(darkMode === 'enabled'){
+if (darkMode === 'enabled') {
    enableDarkMode();
 }
 
-toggleBtn.onclick = (e) =>{
+toggleBtn.onclick = (e) => {
    darkMode = localStorage.getItem('dark-mode');
-   if(darkMode === 'disabled'){
+   if (darkMode === 'disabled') {
       enableDarkMode();
-   }else{
+   } else {
       disableDarkMode();
    }
 }
 
 let sideBar = document.querySelector('.side-bar');
 
-document.querySelector('#menu-btn').onclick = () =>{
+document.querySelector('#menu-btn').onclick = () => {
    sideBar.classList.toggle('active');
    body.classList.toggle('active');
 }
@@ -37,7 +37,7 @@ document.querySelector('#menu-btn').onclick = () =>{
 // Lecture 
 const centersByDay = {
    saturday: ["GHT الشروق", "Oxford City 1"],
-   sunday: ["بروفيشنال شبرا", "حزب العمل","نيو ستار 1","ناسا المعادي"],
+   sunday: ["بروفيشنال شبرا", "حزب العمل", "نيو ستار 1", "ناسا المعادي"],
    monday: ["سمارت الدقي", "سمارت هرم (المجموعة الأساسية)", "سمارت هرم (كورس الإنقاذ)", "سمارت أكتوبر"],
    tuesday: ["Top Academy", "ماراثون", "نيو ستار 2", "سمارت حدايق حلوان", "ناسا المقطم"],
    wednesday: ["Oxford City 2", "تاسك", "الياسمين", "الخليفة"],
@@ -46,7 +46,12 @@ const centersByDay = {
 };
 
 // قائمة للأيام
-document.getElementById("day-select").addEventListener("change", updateCenters);
+window.addEventListener("DOMContentLoaded", () => {
+   const daySelect = document.getElementById("day-select");
+   if (daySelect) {
+      daySelect.addEventListener("change", updateCenters);
+   }
+});
 
 // تحديث قائمة السناتر عند تغيير اليوم
 function updateCenters() {
@@ -59,10 +64,10 @@ function updateCenters() {
 
    // إنشاء روابط صفحات السناتر الجديدة وإضافتها إلى الصفحة
    centers.forEach(center => {
-       const centerLink = document.createElement("a");
-       centerLink.href = `centers/${center}/index.html`;
-       centerLink.textContent = center;
-       centerLink.classList.add("center-link");
-       centersContainer.appendChild(centerLink);
+      const centerLink = document.createElement("a");
+      centerLink.href = `centers/${center}/index.html`;
+      centerLink.textContent = center;
+      centerLink.classList.add("center-link");
+      centersContainer.appendChild(centerLink);
    });
 }
