@@ -34,6 +34,11 @@ document.querySelector('#menu-btn').onclick = () => {
    body.classList.toggle('active');
 }
 
+document.querySelector('#close-btn').onclick = () => {
+   sideBar.classList.remove('active');
+   body.classList.remove('active');
+}
+
 // Lecture 
 const centersByDay = {
    saturday: ["GHT الشروق", "Oxford City 1"],

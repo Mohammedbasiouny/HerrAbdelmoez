@@ -834,33 +834,6 @@ section {
 
 }
 
-/* @media (max-width:768px) {
-
-   #search-btn {
-      display: inline-block;
-   }
-
-   .header .flex .search-form {
-      position: absolute;
-      top: 99%;
-      left: 0;
-      right: 0;
-      border-top: var(--border);
-      border-bottom: var(--border);
-      background-color: var(--white);
-      border-radius: 0;
-      width: auto;
-      padding: 2rem;
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      transition: .2s linear;
-   }
-
-   .header .flex .search-form.active {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-   }
-
-} */
-
 @media screen and (max-width:450px) {
 
    html {
@@ -876,16 +849,20 @@ section {
       grid-template-columns: 1fr;
    }
 
-   .about .row .image img {
-      height: 25rem;
-   }
-
 }
 
 @media screen and (max-width: 420px) {
 
    html {
-      font-size: 45%;
+      font-size: 48%;
+   }
+
+}
+
+@media screen and (max-width: 400px) {
+
+   html {
+      font-size: 46%;
    }
 
 }
@@ -893,15 +870,23 @@ section {
 @media screen and (max-width: 380px) {
 
    html {
-      font-size: 40%;
+      font-size: 45%;
    }
 
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 360px) {
 
    html {
-      font-size: 35%;
+      font-size: 42%;
+   }
+
+}
+
+@media screen and (max-width: 340px) {
+
+   html {
+      font-size: 40%;
    }
 
 }
@@ -914,13 +899,10 @@ section {
 
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 280px) {
 
    html {
-      font-size: 30%;
+      font-size: 34%;
    }
 
-   .header {
-      padding: 5px;
-   }
 }
