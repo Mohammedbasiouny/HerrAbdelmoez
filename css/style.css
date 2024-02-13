@@ -420,22 +420,27 @@ section {
    display: flex;
    align-items: center;
    gap: 1.5rem;
+   padding: 1.5rem 2rem;
 }
 
-.lecture .select-tutor select {
+.lecture .select-tutor .select-box {
+   padding: 0 1.5rem;
    width: 100%;
    background: none;
    font-size: 1.8rem;
    color: var(--black);
-   border: var(--border);
-   padding: 1.5rem 2rem;
-   border-radius: 4px;
 }
 
 .lecture .select-tutor option {
    font-size: 2rem;
    cursor: pointer;
    background: var(--white);
+   color: var(--black);
+}
+
+.lecture .select-tutor option:hover {
+   background-color: #007bff;
+   color: #fff;
 }
 
 .lecture .centers-container {
@@ -445,17 +450,136 @@ section {
 
 .lecture .centers-container .center-link {
    text-align: center;
-   font-size: 1.4rem;
+   font-size: 1.8rem;
    font-weight: 700;
    padding: 1.5rem 2rem;
    color: #FFFFFF;
-   border-radius: 4px;
-   background-color: #d60c3e;
+   border-radius: .5rem;
+   background-color: #ee9507;
    transition: background-color 0.3s ease;
 }
 
 .lecture .centers-container .center-link:hover {
+   background-color: #f38100;
+}
+
+/* Courses */
+.courses .heading span {
+   color: var(--light-color);
+   font-size: 1.8rem;
+}
+
+.courses .select-container {
+   margin-bottom: 2rem;
+   border-radius: 0.5rem;
+   background-color: var(--white);
+   padding: 1.5rem 2rem;
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+}
+
+.courses .lecture-box {
+   padding: .8rem 1.5rem;
+   border-radius: .5rem;
+   border: var(--border);
+   width: 100%;
+   background: none;
+   font-size: 1.8rem;
+   color: var(--black);
+}
+
+.courses .lecture-box option {
+   font-size: 2rem;
+   color: var(--black);
+   background-color: var(--white);
+}
+
+.courses .lecture-box option:hover {
+   background-color: #007bff;
+   color: #fff;
+}
+
+.courses .lecteure-button {
    background-color: #ee9507;
+   color: #fff;
+   padding: .8rem 1.5rem;
+   border-radius: .5rem;
+   cursor: pointer;
+   font-size: 1.8rem;
+   transition: background-color 0.3s ease;
+}
+
+.courses .lecteure-button:hover {
+   background-color: #f38100;
+}
+
+.courses .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.courses .box-container .box {
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+}
+
+.courses .box-container .box .tutor {
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   margin-bottom: 2.5rem;
+}
+
+.courses .box-container .box .tutor img {
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.courses .box-container .box .tutor .info h3 {
+   font-size: 1.8rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.courses .box-container .box .tutor .info span {
+   font-size: 1.3rem;
+   color: var(--light-color);
+}
+
+.courses .box-container .box .thumb {
+   position: relative;
+}
+
+.courses .box-container .box .thumb img {
+   width: 100%;
+   height: 40rem;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.courses .box-container .box .thumb span {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   border-radius: .5rem;
+   padding: .5rem 1.5rem;
+   background-color: rgba(0, 0, 0, .3);
+   color: #fff;
+   font-size: 1.5rem;
+}
+
+.courses .box-container .box .title {
+   font-size: 2rem;
+   color: var(--black);
+   padding-bottom: .5rem;
+   padding-top: 1rem;
 }
 
 /* Location */
@@ -488,12 +612,10 @@ section {
 .location .box-container .box .title {
    font-size: 2rem;
    color: var(--black);
-   margin-bottom: 10px;
+   margin-bottom: 2rem;
    background-color: var(--white);
-   border-radius: 20px;
-   padding: 10px 20px;
-   line-height: 1.5;
-
+   border-radius: 0.5rem;
+   padding: 1.5rem 2rem;
 }
 
 .location .box-container .box .flex {
@@ -514,15 +636,14 @@ section {
 
 .location .box-container .flex th,
 .location .box-container .flex td {
-   padding: 1rem 0;
+   padding: .8rem;
    font-size: 1.8rem;
    color: #000000;
-   line-height: 2;
    font-weight: 600;
 }
 
 .location .box-container .flex table {
-   background-color: rgba(255, 255, 255, 0.2);
+   background-color: rgba(255, 255, 255, 0.5);
 }
 
 .location .box-container .flex table tr:nth-child(even) {
@@ -713,7 +834,7 @@ section {
 
 }
 
-@media (max-width:768px) {
+/* @media (max-width:768px) {
 
    #search-btn {
       display: inline-block;
@@ -738,9 +859,9 @@ section {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
    }
 
-}
+} */
 
-@media (max-width:450px) {
+@media screen and (max-width:450px) {
 
    html {
       font-size: 50%;
@@ -759,4 +880,47 @@ section {
       height: 25rem;
    }
 
+}
+
+@media screen and (max-width: 420px) {
+
+   html {
+      font-size: 45%;
+   }
+
+}
+
+@media screen and (max-width: 380px) {
+
+   html {
+      font-size: 40%;
+   }
+
+}
+
+@media screen and (max-width: 350px) {
+
+   html {
+      font-size: 35%;
+   }
+
+}
+
+@media screen and (max-width: 320px) {
+
+   html {
+      font-size: 35%;
+   }
+
+}
+
+@media screen and (max-width: 300px) {
+
+   html {
+      font-size: 30%;
+   }
+
+   .header {
+      padding: 5px;
+   }
 }
