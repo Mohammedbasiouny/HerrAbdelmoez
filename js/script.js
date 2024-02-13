@@ -1,3 +1,5 @@
+/* Main JS file for the website */
+
 const toggleBtn = document.getElementById('toggle-btn');
 const { body } = document;
 let darkMode = localStorage.getItem('dark-mode');
@@ -39,7 +41,30 @@ document.querySelector('#close-btn').onclick = () => {
    body.classList.remove('active');
 };
 
-// Lecture
+// Function 1
+document.addEventListener("DOMContentLoaded", function () {
+   const dayTitles = document.querySelectorAll('.day .title');
+
+   dayTitles.forEach(function (title) {
+      title.addEventListener('click', function () {
+         const flexContainer = this.nextElementSibling;
+
+         // Close all other open flex containers
+         const allFlexContainers = document.querySelectorAll('.flex');
+         allFlexContainers.forEach(function (container) {
+            if (container !== flexContainer && container.classList.contains('active')) {
+               container.classList.remove('active');
+            }
+         });
+
+         // Toggle the active class for the clicked flex container
+         flexContainer.classList.toggle('active');
+      });
+   });
+});
+
+
+// Function 2
 const centersByDay = {
    saturday: ['GHT الشروق', 'Oxford City 1'],
    sunday: ['بروفيشنال شبرا', 'حزب العمل', 'نيو ستار 1', 'ناسا المعادي'],
@@ -78,7 +103,7 @@ function updateCenters() {
 }
 
 
-// Function to show the selected box
+// Function 3
 function showBox() {
    const selectedBoxName = document.getElementById("box-number").value;
 
@@ -120,3 +145,4 @@ function getBoxName(box) {
 
 // Call the function to initialize select options when the page loads
 window.onload = initializeSelectOptions;
+

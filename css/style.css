@@ -135,6 +135,7 @@ section {
    gap: 1rem;
 }
 
+/* Header */
 .header {
    position: sticky;
    top: 0;
@@ -158,34 +159,6 @@ section {
    color: var(--black);
 }
 
-.header .flex .search-form {
-   width: 50rem;
-   border-radius: .5rem;
-   background-color: var(--light-bg);
-   padding: 1.5rem 2rem;
-   display: flex;
-   gap: 2rem;
-
-}
-
-.header .flex .search-form input {
-   width: 100%;
-   font-size: 1.8rem;
-   color: var(--black);
-   background: none;
-}
-
-.header .flex .search-form button {
-   background: none;
-   font-size: 2rem;
-   cursor: pointer;
-   color: var(--black);
-}
-
-.header .flex .search-form button:hover {
-   color: var(--main-color);
-}
-
 .header .flex .icons div {
    font-size: 2rem;
    color: var(--black);
@@ -204,50 +177,7 @@ section {
    color: var(--white);
 }
 
-.header .flex .profile {
-   position: absolute;
-   top: 120%;
-   right: 2rem;
-   background-color: var(--white);
-   border-radius: .5rem;
-   padding: 1.5rem;
-   text-align: center;
-   overflow: hidden;
-   transform-origin: top right;
-   transform: scale(0);
-   transition: .2s linear;
-   width: 30rem;
-}
-
-.header .flex .profile.active {
-   transform: scale(1);
-}
-
-.header .flex .profile .image {
-   height: 10rem;
-   width: 10rem;
-   border-radius: 50%;
-   object-fit: contain;
-   margin-bottom: 1rem;
-}
-
-.header .flex .profile .name {
-   font-size: 2rem;
-   color: var(--black);
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-}
-
-.header .flex .profile .role {
-   font-size: 1.8rem;
-   color: var(--light-color);
-}
-
-#search-btn {
-   display: none;
-}
-
+/* Side Bar */
 .side-bar {
    position: fixed;
    top: 0;
@@ -336,76 +266,97 @@ section {
    left: -30rem;
 }
 
-.home-grid .box-container {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 27.5rem);
+/* Home */
+.home-grid .day-container {
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
    gap: 1.5rem;
    justify-content: center;
-   align-items: flex-start;
+   display: flex;
+   flex-wrap: wrap;
 }
 
-.home-grid .box-container .box {
+.home-grid .day-container .day {
    background-color: var(--white);
    border-radius: .5rem;
    padding: 2rem;
 }
 
-.home-grid .box-container .box .title {
+.home-grid .day-container .day .title {
    font-size: 2rem;
    color: var(--black);
    text-transform: capitalize;
+   cursor: pointer;
 }
 
-.home-grid .box-container .box .flex {
-   display: flex;
+.home-grid .day-container .day .flex {
+   display: none;
    flex-wrap: wrap;
    gap: 1.5rem;
    margin-top: 2rem;
 }
 
-.home-grid .box-container .flex a {
-   background-color: var(--light-bg);
+.home-grid .day-container .day .flex.active {
+   display: flex;
+}
+
+.home-grid .day-container .day a {
+   background-color: #ee9507;
+   color: #FFFFFF;
    border-radius: .5rem;
    padding: 1rem 1.5rem;
    font-size: 1.5rem;
 }
 
-.home-grid .box-container .flex a i {
-   margin-right: 1rem;
-   color: var(--black);
+.home-grid .day-container .flex a:hover {
+   background-color: #f38100;
 }
 
-.home-grid .box-container .flex a span {
-   color: var(--light-color);
+.home-grid .row {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   margin-top: 2.5rem;
+   border-top: var(--border);
+   padding-top: 1.5rem;
 }
 
-.home-grid .box-container .flex a:hover {
-   background-color: var(--black);
+.home-grid .row .image {
+   flex: 1 1 40rem;
 }
 
-.home-grid .box-container .flex a:hover span {
-   color: var(--white);
+.home-grid .row .image img {
+   width: 100%;
+   height: 50rem;
 }
 
-.home-grid .box-container .flex a:hover i {
-   color: var(--white);
+.home-grid .quick-links {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+   margin-top: 3rem;
 }
 
-.home-grid .box-container .tutor {
-   padding: 1rem 0;
-   font-size: 1.8rem;
-   color: var(--light-color);
-   line-height: 2;
+.home-grid .quick-links .link {
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+   display: flex;
+   align-items: center;
+   gap: 2.5rem;
 }
 
-.home-grid .box-container .likes {
-   color: var(--light-color);
-   font-size: 1.7rem;
-   margin-top: 1.5rem;
-}
-
-.home-grid .box-container .likes span {
+.home-grid .quick-links .link i {
+   font-size: 4rem;
    color: var(--main-color);
+}
+
+.home-grid .quick-links .link h3 {
+   font-size: 2.5rem;
+   color: var(--black);
+   margin-bottom: .3rem;
 }
 
 /* Lecture */
@@ -793,7 +744,7 @@ section {
 
 }
 
-@media screen and (max-width:450px) {
+@media (max-width:450px) {
 
    html {
       font-size: 50%;
@@ -809,6 +760,7 @@ section {
    }
 
 }
+
 
 @media screen and (max-width: 420px) {
 
